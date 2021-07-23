@@ -21,12 +21,6 @@ public class FileUploadController {
         return filePathService.Upload(file);
     }
 
-//  Get method to get All files
-    @GetMapping("/files")
-    private List<FilePath> getAllFiles(){
-        return filePathService.getAllFile();
-    }
-
 //  Get Method to get File by ID
     @GetMapping("/files/{id}")
     private FilePath getFileByID(@PathVariable("id") long id){
@@ -37,5 +31,11 @@ public class FileUploadController {
     @DeleteMapping("/files/{id}")
     private void deleteFile(@PathVariable("id") long id){
         filePathService.deleteFile(id);
+    }
+
+//  Change
+    @GetMapping("/files")
+    private List<FilePath> getAllFiles() {
+        return filePathService.getAllFile();
     }
 }
